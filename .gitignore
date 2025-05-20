@@ -1,0 +1,9 @@
+.idea
+/tests/example.spec.ts
+/tests-examples
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
