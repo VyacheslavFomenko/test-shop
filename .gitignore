@@ -1,4 +1,7 @@
 .idea
+
+.env
+
 /tests/example.spec.ts
 /tests-examples
 # Playwright
