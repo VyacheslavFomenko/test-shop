@@ -1,6 +1,6 @@
 import {Page} from "@playwright/test";
 
-class RegisterPage {
+export class RegisterPage {
     readonly page: Page;
     readonly firstNameInput = "#AccountFrm_firstname";
     readonly lastNameInput = "#AccountFrm_lastname";
@@ -20,7 +20,7 @@ class RegisterPage {
     }
 
     async open(): Promise<void> {
-        await this.page.goto("/");
+        await this.page.goto("/index.php?rt=account/create");
     }
 
     async fillFirstNameInput(firstName: string) {
@@ -53,10 +53,9 @@ class RegisterPage {
         await this.page.locator(this.cityInput).blur();
     }
 
-    async fillZoneInput(zone: string) {
-        await this.page.locator(this.zoneInput).clear();
-        await this.page.locator(this.zoneInput).fill(zone);
-        await this.page.locator(this.zoneInput).blur();
+    async fillZoneSelect() {
+        //TODO
+        await this.page.locator(this.zoneInput).selectOption("Angus");
     }
 
     async fillPostCodeInput(postCode: string) {
