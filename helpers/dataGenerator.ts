@@ -1,7 +1,18 @@
 import {faker} from '@faker-js/faker';
 
-module.exports = {
-    generateValidUser: (): Object => ({
+export interface User{
+        username: string;
+        email: string;
+        password: string;
+        firstName: string;
+        lastName: string;
+        city: string;
+        address: string;
+        postcode: string;
+}
+
+
+export const generateValidUser = (): User => ({
         username: faker.internet.username(),
         email: faker.internet.email(),
         password: faker.internet.password(),
@@ -10,6 +21,7 @@ module.exports = {
         city: faker.location.city(),
         address: faker.location.streetAddress(),
         postcode: faker.lorem.sentence(),
-    }),
+    })
     //generateNonValidUser: () => ({})
-};
+
+
